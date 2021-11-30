@@ -57,15 +57,46 @@ components:
           example:
             code: 400
             message: Email already taken
+    InvalidCard:
+      description: Invalid card body
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            Invalid Name:
+              value:
+                code: 400
+                message: Invalid name
+            Invalid Media:
+              value:
+                code: 400
+                message: Invalid media id
+            Invalid Card Expiration:
+              value:
+                code: 400
+                message: Invalid card expiration date
+            Invalid Card Holder:
+              value:
+                code: 400
+                message: Invalid card holder name
+            InvalidCardNumber:
+              value:
+                code: 400
+                message: Invalid card number
+            InvalidCategory:
+              value:
+                code: 400
+                message: Invalid card category
     Unauthorized:
       description: Unauthorized
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-          example:
-            code: 401
-            message: Please authenticate
+          examples:
+            code: 403
+            message: Forbidden
     Forbidden:
       description: Forbidden
       content:

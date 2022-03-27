@@ -1,4 +1,6 @@
 const httpStatus = require('http-status');
+const multer = require("multer");
+const upload = multer({ dest: "uploads/" });
 const { User } = require('../models');
 const ApiError = require('../utils/ApiError');
 
@@ -79,6 +81,10 @@ const deleteUserById = async (userId) => {
   return user;
 };
 
+const uploadGovtId = async (userId, file) => {
+  const c = await upload.array(file);
+};
+
 module.exports = {
   createUser,
   queryUsers,
@@ -86,4 +92,5 @@ module.exports = {
   getUserByEmail,
   updateUserById,
   deleteUserById,
+  uploadGovtId,
 };

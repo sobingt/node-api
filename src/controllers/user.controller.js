@@ -34,10 +34,16 @@ const deleteUser = catchAsync(async (req, res) => {
   res.status(httpStatus.NO_CONTENT).send();
 });
 
+const uploadGovtId = catchAsync(async (req, res) => {
+  // await userService.uploadGovtId(req.params.userId, req.body);
+  res.send({ message: 'File uploaded successfully!!' });
+});
+
 module.exports = {
   createUser,
   getUsers,
   getUser,
   updateUser,
   deleteUser,
+  uploadGovtId,
 };

@@ -90,10 +90,19 @@ const verifyEmail = async (verifyEmailToken) => {
   }
 };
 
+const getVersion = async () => {
+  try {
+    return process.env.npm_package_version;
+  } catch (error) {
+    throw new ApiError(httpStatus.INTERNAL_SERVER_ERROR, 'Internal Server Error');
+  }
+};
+
 module.exports = {
   loginUserWithEmailAndPassword,
   logout,
   refreshAuth,
   resetPassword,
   verifyEmail,
+  getVersion,
 };

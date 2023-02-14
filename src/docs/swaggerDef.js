@@ -11,12 +11,12 @@ const swaggerDef = {
       url: 'https://github.com/sobingt/flutter-assignment-api/blob/master/LICENSE',
     },
   },
-  servers: [
+  servers: [    
     {
-      url: `http://localhost:${config.port}/v1`,
+      url: `https://interview-api.onrender.com/v1`,
     },
     {
-      url: `https://flutter-assignment-api.herokuapp.com/v1`,
+      url: `http://localhost:${config.port}/v1`,
     },
   ],
 };
